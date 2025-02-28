@@ -1,4 +1,3 @@
-<h1 align="center">👋 Hi, I'm [사용자명]!</h1>
 <p align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=20&pause=1000&color=00FF00&center=true&width=500&lines=Electronics+%26+Hardware+Developer;Software+Enthusiast;Startup+and+Investment+Explorer">
 </p>
@@ -29,21 +28,20 @@
 
 ## 📊 **GitHub Stats**
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=사용자명&show_icons=true&theme=radical" width="48%">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=사용자명&theme=radical" width="48%">
+  <img src="https://github-readme-stats.vercel.app/api?username=pachir1su&show_icons=true&theme=radical" width="48%">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=pachir1su&theme=radical" width="48%">
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=사용자명&layout=compact&theme=radical" width="48%">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=pachir1su&layout=compact&theme=radical" width="48%">
 </p>
 
 ---
 
 ## 🏆 **GitHub Achievements**
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=사용자명&theme=radical&row=1&column=7"/>
+  <img src="https://github-profile-trophy.vercel.app/?username=pachir1su&theme=radical&row=1&column=7"/>
 </p>
-
 ---
 
 ## 🌟 **Pinned Projects**
