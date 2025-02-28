@@ -11,3 +11,7 @@
   <img src="https://github-readme-stats.vercel.app/api?username=pachir1su&show_icons=true&theme=graywhite" width="48%">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=pachir1su&theme=graywhite" width="48%">
 </p>
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=pachir1su&color=blue" alt="Profile Views"/>
+</p>
