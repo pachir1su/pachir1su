@@ -13,3 +13,6 @@
 </p>
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=pachir1su)](https://github.com/anuraghazra/github-readme-stats)
+
+
+<iframe src="https://r1xxac.notion.site/ebd/1a978e12a7a280a9939fc6807fad2f5d" width="100%" height="600" frameborder="0" allowfullscreen />
