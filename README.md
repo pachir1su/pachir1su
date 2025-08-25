@@ -10,7 +10,6 @@
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=pachir1su&show_icons=true&theme=graywhite" width="48%"><br>
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=pachir1su&theme=graywhite" width="48%"><br>
-  ![Most used languages](https://github-readme-stats.vercel.app/api/top-langs/?username=pachir1su&layout=compact&langs_count=10&cache_seconds=1800&theme=gruvbox) <br/>
 </p>
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=pachir1su)](https://github.com/anuraghazra/github-readme-stats)
