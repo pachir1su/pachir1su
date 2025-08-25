@@ -8,8 +8,8 @@
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=pachir1su&show_icons=true&theme=graywhite" width="48%">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=pachir1su&theme=graywhite" width="48%">
+  <img src="https://github-readme-stats.vercel.app/api?username=pachir1su&show_icons=true&theme=graywhite&hide_border=true&rank_icon=github" width="48%"><br>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=pachir1su&theme=graywhite&hide_border=true" width="48%"><br>
 </p>
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=pachir1su)](https://github.com/anuraghazra/github-readme-stats)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=pachir1su&layout=compact&langs_count=10&theme=graywhite&hide_border=true)](https://github.com/anuraghazra/github-readme-stats)
