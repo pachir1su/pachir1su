@@ -20,3 +20,12 @@
 <p align="left">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=pachir1su&theme=graywhite&hide_border=true" width="48%"><br>
 </p>
+
+
+<p align="left">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=pachir1su&layout=compact&langs_count=10&theme=graywhite&hide_border=true&card_width=720" width="98%">
+</p>
+
+<p align="left">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=pachir1su&theme=github&bg_color=ffffff&color=111111&line=111111&point=111111&hide_border=true" width="98%">
+</p>
