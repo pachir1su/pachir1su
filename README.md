@@ -24,5 +24,3 @@
 <p align="left">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=pachir1su&theme=github&bg_color=ffffff&color=111111&line=111111&point=111111&hide_border=true" width="98%">
 </p>
-
-<a href=""> <img align="center" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=pachir1suM&theme=react&line_height=40&hide=css"/> </a>
