@@ -12,11 +12,11 @@
 </p>
 
 <!-- Stats -->
+<div align="center">
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=pachir1su&show_icons=true&theme=graywhite" height="180" alt="pachir1su's Github Stats" />
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=pachir1su&layout=compact&langs_count=10&theme=graywhite&hide_border=true" height="180" alt="Top Langs" />
+</div>
+
 <p align="left">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=pachir1su&theme=graywhite&hide_border=true" width="48%"><br>
 </p>
-
-<div align="center">
-  <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=pachir1su&show_icons=true&theme=graywhite" height="180" alt="pachir1su's Github Stats" /><br>
-  <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=pachir1su&layout=compact&langs_count=10&theme=graywhite&hide_border=true" height="180" alt="Top Langs" />
-</div>
