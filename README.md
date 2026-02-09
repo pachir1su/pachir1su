@@ -24,3 +24,8 @@
 <p align="left">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=pachir1su&theme=github&bg_color=ffffff&color=111111&line=111111&point=111111&hide_border=true" width="98%">
 </p>
+
+<div align="center">
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=pachir1su&show_icons=true&theme=graywhite" height="180" alt="pachir1su's Github Stats" />
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=pachir1su&layout=compact&langs_count=10&theme=graywhite&hide_border=true" height="180" alt="Top Langs" />
+</div>
