@@ -11,16 +11,28 @@
   <img src="https://img.shields.io/badge/flask-000000?style=for-the-badge&logo=flask&logoColor=white">
 </p>
 
-<!-- Stats -->
+<!-- Stats - github-profile-summary-cards -->
+
 <div align="center">
-  <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=pachir1su&show_icons=true&theme=graywhite" height="180" alt="pachir1su's Github Stats" />
-  <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=pachir1su&layout=compact&langs_count=15&theme=graywhite&hide_border=true" height="180" alt="Top Langs" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=pachir1su&theme=github" width="98%" alt="Profile Details"/>
+</div>
+<div align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=pachir1su&theme=github" height="180" alt="Repos Per Language"/>
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=pachir1su&theme=github" height="180" alt="Most Commit Language"/>
+</div>
+<div align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=pachir1su&theme=github" height="180" alt="Stats"/>
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=pachir1su&theme=github&utcOffset=9" height="180" alt="Productive Time"/>
 </div>
 
-<p align="left">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=pachir1su&theme=graywhite&hide_border=true" width="48%"><br>
-</p>
+<!-- Streak - streak-stats -->
 
-<p align="left">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=pachir1su&theme=github&bg_color=ffffff&color=111111&line=111111&point=111111&hide_border=true" width="98%">
-</p>
+<div align="center">
+  <img src="https://streak-stats.demolab.com?user=pachir1su&theme=github-dark-blue&hide_border=true" width="60%" alt="GitHub Streak"/>
+</div>
+
+<!-- Activity Graph -->
+
+<div align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=pachir1su&theme=github&bg_color=ffffff&color=111111&line=111111&point=111111&hide_border=true" width="98%" alt="Activity Graph"/>
+</div>
