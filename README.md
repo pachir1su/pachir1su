@@ -21,7 +21,7 @@
 <!-- Trophy -->
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=pachir1su&theme=flat&no-frame=true&column=7" width="98%" alt="Trophy"/>
+  <img src="https://github-profile-trophy.vercel.app/?username=pachir1su&theme=onedark&no-frame=true&column=7&margin-w=10" width="98%" alt="Trophy"/>
 </div>
 
 <!-- Profile Details -->
