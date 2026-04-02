@@ -11,21 +11,22 @@
   <img src="https://img.shields.io/badge/flask-000000?style=for-the-badge&logo=flask&logoColor=white">
 </p>
 
-<!-- Stats - github-profile-summary-cards -->
+<!-- Stats + Top Languages (등급 & 언어 비율) -->
 
 <div align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=pachir1su&theme=github" width="98%" alt="Profile Details"/>
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=pachir1su&show_icons=true&theme=graywhite&hide_border=true" height="180" alt="pachir1su's Github Stats"/>
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=pachir1su&layout=compact&langs_count=15&theme=graywhite&hide_border=true" height="180" alt="Top Langs"/>
 </div>
+
+<!-- Summary Cards (레포별 언어 / 커밋별 언어 / 커밋 시간대) -->
+
 <div align="center">
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=pachir1su&theme=github" height="180" alt="Repos Per Language"/>
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=pachir1su&theme=github" height="180" alt="Most Commit Language"/>
-</div>
-<div align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=pachir1su&theme=github" height="180" alt="Stats"/>
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=pachir1su&theme=github&utcOffset=9" height="180" alt="Productive Time"/>
 </div>
 
-<!-- Streak - streak-stats -->
+<!-- Streak -->
 
 <div align="center">
   <img src="https://streak-stats.demolab.com?user=pachir1su&theme=github-dark-blue&hide_border=true" width="60%" alt="GitHub Streak"/>
