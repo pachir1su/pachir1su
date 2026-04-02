@@ -21,6 +21,9 @@
 <!-- Summary Cards (레포별 언어 / 커밋별 언어 / 커밋 시간대) -->
 
 <div align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=pachir1su&theme=github" width="98%" alt="Profile Details"/>
+</div>
+<div align="center">
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=pachir1su&theme=github" height="180" alt="Repos Per Language"/>
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=pachir1su&theme=github" height="180" alt="Most Commit Language"/>
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=pachir1su&theme=github&utcOffset=9" height="180" alt="Productive Time"/>
