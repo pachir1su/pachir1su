@@ -18,12 +18,6 @@
   <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=pachir1su&layout=compact&langs_count=15&theme=graywhite&hide_border=true" height="180" alt="Top Langs"/>
 </div>
 
-<!-- Trophy -->
-
-<div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=pachir1su&theme=onedark&no-frame=true&column=7&margin-w=10" width="98%" alt="Trophy"/>
-</div>
-
 <!-- Profile Details -->
 
 <div align="center">
