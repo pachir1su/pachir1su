@@ -11,24 +11,11 @@
   <img src="https://img.shields.io/badge/flask-000000?style=for-the-badge&logo=flask&logoColor=white"/>
 </p>
 
-<!-- Stats + Top Languages -->
-
-<div align="center">
-  <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=pachir1su&show_icons=true&theme=graywhite&hide_border=true" height="180" alt="pachir1su's Github Stats"/>
-  <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=pachir1su&layout=compact&langs_count=15&theme=graywhite&hide_border=true" height="180" alt="Top Langs"/>
-</div>
-
-<!--
-  Metrics (includes private repositories + top 20 languages).
-  Activate AFTER setting up the METRICS_TOKEN secret and running the
-  `.github/workflows/metrics.yml` workflow at least once
-  (the workflow generates github-metrics.svg in the repo root).
-  Then uncomment the block below.
 
 <div align="center">
   <img src="./github-metrics.svg" alt="pachir1su's Metrics"/>
 </div>
--->
+
 
 <!-- Profile Details -->
 
