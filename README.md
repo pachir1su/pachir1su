@@ -11,18 +11,18 @@
   <img src="https://img.shields.io/badge/flask-000000?style=for-the-badge&logo=flask&logoColor=white"/>
 </p>
 
-<!-- Stats + Top Languages -->
+<!-- Stats Cards -->
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=pachir1su&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true" width="48%" alt="GitHub Stats"/>
-  &nbsp;
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=pachir1su&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" width="48%" alt="Top Languages"/>
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=pachir1su&theme=github" width="32%" alt="Stats"/>
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=pachir1su&theme=github" width="32%" alt="Repos per Language"/>
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=pachir1su&theme=github" width="32%" alt="Most Commit Language"/>
 </div>
 
-<!-- Trophies -->
+<!-- Productive Time -->
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=pachir1su&theme=tokyonight&no-bg=true&no-frame=true&column=7&margin-w=8" width="98%" alt="GitHub Trophies"/>
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=pachir1su&theme=github&utcOffset=9" width="50%" alt="Productive Time"/>
 </div>
 
 
@@ -47,10 +47,4 @@
 
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=pachir1su&theme=github&bg_color=ffffff&color=111111&line=111111&point=111111&hide_border=true" width="98%" alt="Activity Graph"/>
-</div>
-
-<!-- Snake -->
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/pachir1su/pachir1su/output/snake.svg" alt="Snake Animation"/>
 </div>
