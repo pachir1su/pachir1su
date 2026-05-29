@@ -14,8 +14,7 @@
 <!-- GitHub Stats with Rank -->
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=pachir1su&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true&rank_icon=github" width="48%" alt="GitHub Stats"/>
-  &nbsp;
+  <img src="./github-stats.svg" alt="GitHub Stats"/>
 </div>
 
 
