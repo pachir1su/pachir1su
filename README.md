@@ -48,9 +48,3 @@
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=pachir1su&theme=github&bg_color=ffffff&color=111111&line=111111&point=111111&hide_border=true" width="98%" alt="Activity Graph"/>
 </div>
-
-<!-- Snake -->
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/pachir1su/pachir1su/output/snake.svg" alt="Snake Animation"/>
-</div>
