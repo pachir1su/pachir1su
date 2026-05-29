@@ -23,12 +23,6 @@
 </div>
 
 
-<!-- Profile Details -->
-
-<div align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=pachir1su&theme=github" width="98%" alt="Profile Details"/>
-</div>
-
 <!-- Streak -->
 
 <div align="center">
