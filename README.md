@@ -11,18 +11,12 @@
   <img src="https://img.shields.io/badge/flask-000000?style=for-the-badge&logo=flask&logoColor=white"/>
 </p>
 
-<!-- Stats Cards -->
+<!-- GitHub Stats with Rank -->
 
 <div align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=pachir1su&theme=github" width="32%" alt="Stats"/>
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=pachir1su&theme=github" width="32%" alt="Repos per Language"/>
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=pachir1su&theme=github" width="32%" alt="Most Commit Language"/>
-</div>
-
-<!-- Productive Time -->
-
-<div align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=pachir1su&theme=github&utcOffset=9" width="50%" alt="Productive Time"/>
+  <img src="https://github-readme-stats.vercel.app/api?username=pachir1su&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true&rank_icon=github" width="48%" alt="GitHub Stats"/>
+  &nbsp;
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=pachir1su&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" width="48%" alt="Top Languages"/>
 </div>
 
 
