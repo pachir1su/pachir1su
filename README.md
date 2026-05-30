@@ -26,7 +26,7 @@
 <!-- Streak -->
 
 <div align="center">
-  <img src="https://streak-stats.demolab.com?user=pachir1su&theme=github-dark-blue&hide_border=true" width="60%" alt="GitHub Streak"/>
+  <img src="https://streak-stats.demolab.com?user=pachir1su&hide_border=true&background=FFFDF6&ring=C63B3B&fire=C63B3B&currStreakNum=1F1C14&sideNums=1F1C14&currStreakLabel=5A5040&sideLabels=5A5040&dates=5A5040&stroke=1F1C142E" width="60%" alt="GitHub Streak"/>
 </div>
 
 <!-- Activity Graph -->
