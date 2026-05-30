@@ -34,3 +34,5 @@
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=pachir1su&theme=github&bg_color=ffffff&color=111111&line=111111&point=111111&hide_border=true" width="98%" alt="Activity Graph"/>
 </div>
+
+[![Git Ranker](https://www.git-ranker.com/api/v1/badges/U_kgDOB8fKlA)](https://www.git-ranker.com/ko/users/pachir1su)
