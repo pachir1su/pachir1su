@@ -1,18 +1,18 @@
 <svg width="495" height="195" viewBox="0 0 495 195" fill="none" xmlns="http://www.w3.org/2000/svg">
   <rect x="0.5" y="0.5" rx="4.5" height="99%" stroke="#1f1c14" stroke-opacity="0.18" fill="#fffdf6" width="494"/>
-  <text x="25" y="35" font-family="Segoe UI,Ubuntu,Sans-Serif" font-size="18" font-weight="600" fill="#c63b3b">거녕&apos;s GitHub Stats</text>
+  <text x="25" y="35" font-family="Segoe UI,Ubuntu,Sans-Serif" font-size="18" font-weight="600" fill="#c63b3b">Geonyeong Lee&apos;s GitHub Stats</text>
 
   <text x="25"  y="75"  font-family="Segoe UI,Ubuntu,Sans-Serif" font-size="14" fill="#5a5040">&#9733; Total Stars Earned:</text>
-  <text x="220" y="75"  font-family="Segoe UI,Ubuntu,Sans-Serif" font-size="14" font-weight="700" fill="#1f1c14">1</text>
+  <text x="220" y="75"  font-family="Segoe UI,Ubuntu,Sans-Serif" font-size="14" font-weight="700" fill="#1f1c14">5</text>
 
   <text x="25"  y="105" font-family="Segoe UI,Ubuntu,Sans-Serif" font-size="14" fill="#5a5040">&#8635; Total Commits (2026):</text>
-  <text x="220" y="105" font-family="Segoe UI,Ubuntu,Sans-Serif" font-size="14" font-weight="700" fill="#1f1c14">1004</text>
+  <text x="220" y="105" font-family="Segoe UI,Ubuntu,Sans-Serif" font-size="14" font-weight="700" fill="#1f1c14">1027</text>
 
   <text x="25"  y="135" font-family="Segoe UI,Ubuntu,Sans-Serif" font-size="14" fill="#5a5040">&#10145; Total PRs:</text>
-  <text x="220" y="135" font-family="Segoe UI,Ubuntu,Sans-Serif" font-size="14" font-weight="700" fill="#1f1c14">187</text>
+  <text x="220" y="135" font-family="Segoe UI,Ubuntu,Sans-Serif" font-size="14" font-weight="700" fill="#1f1c14">201</text>
 
   <text x="25"  y="165" font-family="Segoe UI,Ubuntu,Sans-Serif" font-size="14" fill="#5a5040">&#9679; Total Issues:</text>
-  <text x="220" y="165" font-family="Segoe UI,Ubuntu,Sans-Serif" font-size="14" font-weight="700" fill="#1f1c14">158</text>
+  <text x="220" y="165" font-family="Segoe UI,Ubuntu,Sans-Serif" font-size="14" font-weight="700" fill="#1f1c14">167</text>
 
   <g transform="translate(390,97)">
     <circle cx="0" cy="0" r="40" fill="none" stroke="#1f1c14" stroke-opacity="0.15" stroke-width="6"/>
