@@ -9,10 +9,12 @@
 
 ### About
 
+
 코리아텍 · 임베디드 / 웹  
 Arduino · Raspberry Pi · React · Flask  
 Python · Java · C++  
 → [pachir1su.github.io](https://pachir1su.github.io)
+
 
 <!-- Tech stack -->
 
