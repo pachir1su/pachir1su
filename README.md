@@ -8,12 +8,8 @@
 <!-- About -->
 
 ### About
-
-
-코리아텍 · 임베디드 / 웹  
-Arduino · Raspberry Pi · React · Flask  
-Python · Java · C++  
-→ [pachir1su.github.io](https://pachir1su.github.io)
+<a href="https://pachir1su.github.io"><img src="https://img.shields.io/badge/Portfolio-C63B3B?style=for-the-badge&logo=aboutdotme&logoColor=white" alt="Portfolio"/></a>
+<a href="https://github.com/pachir1su"><img src="https://img.shields.io/badge/GitHub-1F1C14?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
 
 
 <!-- Tech stack -->
@@ -61,13 +57,4 @@ Python · Java · C++
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/pachir1su/pachir1su/output/snake.svg" alt="Contribution Snake"/>
-</div>
-
-<!-- Ranker & links -->
-
-<div align="center">
-  <a href="https://www.git-ranker.com/ko/users/pachir1su"><img src="https://www.git-ranker.com/api/v1/badges/U_kgDOB8fKlA" alt="Git Ranker"/></a>
-  &nbsp;
-  <a href="https://github.com/pachir1su"><img src="https://img.shields.io/badge/GitHub-1F1C14?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
-  <a href="https://pachir1su.github.io"><img src="https://img.shields.io/badge/Portfolio-C63B3B?style=for-the-badge&logo=aboutdotme&logoColor=white" alt="Portfolio"/></a>
 </div>
