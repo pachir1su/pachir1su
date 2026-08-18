@@ -18,6 +18,9 @@ jobs:
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: pachir1su
+          # Temporary: dumps the GraphQL response so the empty
+          # repositories.nodes can be traced. Remove once diagnosed.
+          debug: yes
           filename: github-metrics.svg
           base: header, activity, community, repositories, metadata
           config_timezone: Asia/Seoul
