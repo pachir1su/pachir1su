@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "tracking": {
+    "username": "pachir1su",
+    "timezone": "Asia/Seoul",
+    "primary_rank": "profile_card",
+    "profile_card_algorithm": "normal-cdf formula in generate_stats.py",
+    "comparison_rank": "github-readme-stats upstream-compatible formula",
+    "polling_note": "Scheduled checks detect rank changes; GitHub Actions cron may run later than its nominal time."
+  },
+  "historical_observations": [
+    {
+      "observed_at": "2025-08-19T11:24:41+09:00",
+      "rank": "C+",
+      "basis": "user-provided stats screenshot",
+      "calculator": "github-readme-stats card shown at the time",
+      "stats": {
+        "stars": 0,
+        "commits": 430,
+        "pull_requests": 12,
+        "issues": 0,
+        "reviews": null,
+        "followers": null
+      }
+    },
+    {
+      "observed_at": "2026-05-29T15:18:58+09:00",
+      "rank": "B+",
+      "basis": "committed github-stats.svg",
+      "calculator": "profile custom normal-CDF card",
+      "stats": {
+        "stars": 1,
+        "commits": 934,
+        "pull_requests": 107,
+        "issues": 75,
+        "reviews": null,
+        "followers": null
+      }
+    },
+    {
+      "observed_at": "2026-06-03T13:20:55+09:00",
+      "rank": "A-",
+      "basis": "committed github-stats.svg promotion",
+      "calculator": "profile custom normal-CDF card",
+      "stats": {
+        "stars": 1,
+        "commits": 973,
+        "pull_requests": 141,
+        "issues": 97,
+        "reviews": null,
+        "followers": null
+      }
+    },
+    {
+      "observed_at": "2026-08-18T18:32:10+09:00",
+      "rank": "A",
+      "basis": "committed github-stats.svg promotion",
+      "calculator": "profile custom normal-CDF card",
+      "stats": {
+        "stars": 44,
+        "commits": 2155,
+        "pull_requests": 492,
+        "issues": 453,
+        "reviews": 330,
+        "followers": 83
+      }
+    }
+  ],
+  "current": null,
+  "rank_changes": []
+}
