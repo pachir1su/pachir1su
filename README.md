@@ -86,7 +86,7 @@
 <!-- GitHub Stats with Rank -->
 
 <div align="center">
-  <img src="./github-stats.svg" alt="GitHub Stats"/>
+  <img src="./github-stats-night.svg" alt="GitHub Stats"/>
 </div>
 
 
