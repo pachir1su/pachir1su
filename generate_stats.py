@@ -14,16 +14,29 @@ HEADERS = {
     'Content-Type': 'application/json',
 }
 
-# Night-sky palette, shared with README. Text sits on bare VOID — the nebula
-# is confined to the ring — so contrast holds at figures 15.99:1, labels
-# 6.90:1, display 7.16:1. Inside the ring the pool lifts the ground to
-# #24154c, where the rank reads 13.39:1 and its caption 5.78:1.
-VOID = '#0b0a1f'
-STAR = '#e9e6ff'
-MUTED = '#9c93c9'
-VIOLET = '#a78bfa'
-DEEP = '#7c3aed'
-GOLD = '#fde68a'
+# Two cards come off one layout. The portfolio embeds github-stats.svg from
+# this repository, so that file keeps the paper tone its page is built on;
+# the profile README uses the night-sky variant instead.
+#
+# Contrast, measured against each ground:
+#   paper  figures 16.71:1  labels 7.77:1  display 5.04:1
+#   night  figures 15.99:1  labels 6.90:1  display 7.16:1
+PALETTES = {
+    'paper': {
+        'ground': '#fffdf6', 'text': '#1f1c14', 'muted': '#5a5040',
+        'accent': '#c63b3b', 'glow': '#c63b3b', 'spark': '#c63b3b',
+        'line': '#1f1c14', 'lineAlpha': '0.12', 'edgeAlpha': '0.16',
+        'trackAlpha': '0.12', 'sky': False,
+    },
+    'night': {
+        'ground': '#0b0a1f', 'text': '#e9e6ff', 'muted': '#9c93c9',
+        'accent': '#a78bfa', 'glow': '#7c3aed', 'spark': '#fde68a',
+        'line': '#a78bfa', 'lineAlpha': '0.22', 'edgeAlpha': '0.28',
+        'trackAlpha': '0.16', 'sky': True,
+    },
+}
+
+CARDS = [('github-stats.svg', 'paper'), ('github-stats-night.svg', 'night')]
 
 # Old-style serif for the display line, tabular mono for figures and labels.
 SERIF = "'Iowan Old Style','Palatino Linotype','Book Antiqua',Palatino,Georgia,serif"
@@ -115,7 +128,7 @@ def calculate_rank(stats):
     if percentile < 87.5: return 'C+', percentile
     return 'C', percentile
 
-def _starfield(blocked, ringCentre, ringRadius):
+def _starfield(palette, blocked, ringCentre, ringRadius):
     """Scatter stars over the empty ground only.
 
     Rejection sampling against the text blocks and the ring keeps a star from
@@ -132,7 +145,8 @@ def _starfield(blocked, ringCentre, ringRadius):
         radius = round(rng.uniform(0.5, 1.7), 2)
         alpha = round(rng.uniform(0.25, 0.9), 2)
         tone = rng.random()
-        fill = VIOLET if tone < 0.18 else (GOLD if tone < 0.28 else STAR)
+        fill = (palette['accent'] if tone < 0.18
+                else palette['spark'] if tone < 0.28 else palette['text'])
 
         # A sparkle reaches further than its centre, so clear the blocks by its
         # arm rather than by the point alone.
@@ -167,8 +181,9 @@ def _escape(text):
             .replace('>', '&gt;')
             .replace('"', '&quot;'))
 
-def generate_svg(stats):
-    """Generate a night-sky GitHub Stats SVG."""
+def generate_svg(stats, theme, path):
+    """Render one stats card in the given palette."""
+    palette = PALETTES[theme]
     rank, percentile = calculate_rank(stats)
 
     # The arc encodes the score itself, so it moves with the data instead of
@@ -194,67 +209,68 @@ def generate_svg(stats):
         ('FOLLOWERS', stats['followers']),
     ]
 
-    # Blocks the starfield must keep clear of, so no star lands beside a
-    # figure and reads as a stray decimal point.
     cellMarkup = []
+    blocked = [(16, 18, 262, 48), (366, 22, 478, 48), (20, 46, 475, 60)]
     for index, (label, value) in enumerate(cells):
         cellX = 28 + (index % 2) * 162
         labelY = 78 + (index // 2) * 46
+        blocked.append((cellX - 10, labelY - 15, cellX + 152, labelY + 30))
         cellMarkup.append(
             f'  <text x="{cellX}" y="{labelY}" font-family="{MONO}" font-size="12.5" '
-            f'letter-spacing="0.9" fill="{MUTED}">{label}</text>\n'
+            f'letter-spacing="0.9" fill="{palette["muted"]}">{label}</text>\n'
             f'  <text x="{cellX}" y="{labelY + 22}" font-family="{MONO}" font-size="23" '
-            f'font-weight="600" fill="{STAR}">{value}</text>'
+            f'font-weight="600" fill="{palette["text"]}">{value}</text>'
         )
     statGrid = '\n'.join(cellMarkup)
 
-    blocked = [(16, 18, 262, 48), (366, 22, 478, 48), (20, 46, 475, 60)]
-    for index in range(len(cells)):
-        cellX = 28 + (index % 2) * 162
-        labelY = 78 + (index // 2) * 46
-        blocked.append((cellX - 10, labelY - 15, cellX + 152, labelY + 30))
-    starfield = _starfield(blocked, (410, 130), RING_RADIUS)
-
-    svg = f'''<svg width="{CARD_WIDTH}" height="{CARD_HEIGHT}" viewBox="0 0 {CARD_WIDTH} {CARD_HEIGHT}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="{name} GitHub stats, rank {rank}">
-  <defs>
+    if palette['sky']:
+        starfield = _starfield(palette, blocked, (410, 130), RING_RADIUS)
+        ground = f'''  <defs>
     <clipPath id="gs-card">
       <rect x="0" y="0" width="{CARD_WIDTH}" height="{CARD_HEIGHT}" rx="6"/>
     </clipPath>
     <radialGradient id="gs-nebula" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="{DEEP}" stop-opacity="0.22"/>
-      <stop offset="100%" stop-color="{DEEP}" stop-opacity="0"/>
+      <stop offset="0%" stop-color="{palette["glow"]}" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="{palette["glow"]}" stop-opacity="0"/>
     </radialGradient>
   </defs>
 
   <g clip-path="url(#gs-card)">
-    <rect x="0" y="0" width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="{VOID}"/>
+    <rect x="0" y="0" width="{CARD_WIDTH}" height="{CARD_HEIGHT}" fill="{palette["ground"]}"/>
     <ellipse cx="410" cy="130" rx="118" ry="102" fill="url(#gs-nebula)"/>
 {starfield}
-  </g>
+  </g>'''
+    else:
+        ground = (f'  <rect x="0" y="0" width="{CARD_WIDTH}" height="{CARD_HEIGHT}" '
+                  f'rx="6" fill="{palette["ground"]}"/>')
 
-  <text x="28" y="38" font-family="{SERIF}" font-size="21" fill="{VIOLET}">{name}</text>
-  <text x="467" y="38" text-anchor="end" font-family="{MONO}" font-size="12" fill="{MUTED}">@{USERNAME}</text>
-  <line x1="28" y1="53" x2="467" y2="53" stroke="{VIOLET}" stroke-opacity="0.22"/>
+    svg = f'''<svg width="{CARD_WIDTH}" height="{CARD_HEIGHT}" viewBox="0 0 {CARD_WIDTH} {CARD_HEIGHT}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="{name} GitHub stats, rank {rank}">
+{ground}
+
+  <text x="28" y="38" font-family="{SERIF}" font-size="21" fill="{palette["accent"]}">{name}</text>
+  <text x="467" y="38" text-anchor="end" font-family="{MONO}" font-size="12" fill="{palette["muted"]}">@{USERNAME}</text>
+  <line x1="28" y1="53" x2="467" y2="53" stroke="{palette["line"]}" stroke-opacity="{palette["lineAlpha"]}"/>
 
 {statGrid}
 
   <g transform="translate(410,130)">
-    <circle r="{RING_RADIUS}" fill="none" stroke="{VIOLET}" stroke-opacity="0.16" stroke-width="5"/>
-    <circle r="{RING_RADIUS}" fill="none" stroke="{VIOLET}" stroke-width="5"
+    <circle r="{RING_RADIUS}" fill="none" stroke="{palette["line"]}" stroke-opacity="{palette["trackAlpha"]}" stroke-width="5"/>
+    <circle r="{RING_RADIUS}" fill="none" stroke="{palette["accent"]}" stroke-width="5"
       stroke-dasharray="{ringFill:.1f} {RING_LENGTH:.1f}" stroke-linecap="round" transform="rotate(-90)"/>
-    <circle cx="{planetX:.1f}" cy="{planetY:.1f}" r="3.4" fill="{GOLD}"/>
-    <text y="-2" text-anchor="middle" font-family="{SERIF}" font-size="28" fill="{STAR}">{rank}</text>
-    <text y="20" text-anchor="middle" font-family="{MONO}" font-size="11.5" letter-spacing="0.9" fill="{MUTED}">TOP {percentile:.0f}%</text>
+    <circle cx="{planetX:.1f}" cy="{planetY:.1f}" r="3.4" fill="{palette["spark"]}"/>
+    <text y="-2" text-anchor="middle" font-family="{SERIF}" font-size="28" fill="{palette["text"] if palette["sky"] else palette["accent"]}">{rank}</text>
+    <text y="20" text-anchor="middle" font-family="{MONO}" font-size="11.5" letter-spacing="0.9" fill="{palette["muted"]}">TOP {percentile:.0f}%</text>
   </g>
 
-  <rect x="0.5" y="0.5" width="{CARD_WIDTH - 1}" height="{CARD_HEIGHT - 1}" rx="6" fill="none" stroke="{VIOLET}" stroke-opacity="0.28"/>
+  <rect x="0.5" y="0.5" width="{CARD_WIDTH - 1}" height="{CARD_HEIGHT - 1}" rx="6" fill="none" stroke="{palette["line"]}" stroke-opacity="{palette["edgeAlpha"]}"/>
 </svg>'''
 
-    with open('github-stats.svg', 'w', encoding='utf-8') as f:
+    with open(path, 'w', encoding='utf-8') as f:
         f.write(svg)
 
-    print(f'Generated github-stats.svg — Rank: {rank} (top {percentile:.1f}%)')
+    print(f'Generated {path} ({theme}) — Rank: {rank} (top {percentile:.1f}%)')
 
 if __name__ == '__main__':
     stats = fetch_stats()
-    generate_svg(stats)
+    for path, theme in CARDS:
+        generate_svg(stats, theme, path)
