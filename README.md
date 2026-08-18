@@ -19,7 +19,7 @@
 
 <!-- Tech stack -->
 
-### 🧰 Tech Stack
+### Tech Stack
 
 <table>
   <tr>
@@ -63,8 +63,8 @@
 
 <!-- Projects -->
 
-<details>
-<summary><b>🔭 공개 저장소</b></summary>
+<!-- <details>
+<summary><b>공개 저장소</b></summary>
 <br/>
 <table>
   <tr><th align="left">Repository</th><th align="left">Language</th></tr>
@@ -77,11 +77,11 @@
   <tr><td><a href="https://github.com/pachir1su/github-rank-insight">github-rank-insight</a></td><td>JavaScript</td></tr>
   <tr><td><a href="https://github.com/pachir1su/file_swordmaster">file_swordmaster</a></td><td>Jupyter Notebook</td></tr>
 </table>
-</details>
+</details> -->
 
 <!-- Stats -->
 
-### 🌌 Stats
+### Stats
 
 <!-- GitHub Stats with Rank -->
 
