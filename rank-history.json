@@ -66,6 +66,32 @@
       }
     }
   ],
-  "current": null,
+  "current": {
+    "observed_at": "2026-08-19T04:49:29+09:00",
+    "profile_card": {
+      "rank": "A",
+      "percentile": 18.258614,
+      "stats": {
+        "stars": 44,
+        "commits": 2180,
+        "pull_requests": 507,
+        "issues": 466,
+        "reviews": 340,
+        "followers": 86
+      }
+    },
+    "github_readme_stats": {
+      "rank": "A",
+      "percentile": 18.660253,
+      "stats": {
+        "stars": 44,
+        "commits": 2180,
+        "pull_requests": 507,
+        "issues": 466,
+        "reviews": 340,
+        "followers": 86
+      }
+    }
+  },
   "rank_changes": []
 }
