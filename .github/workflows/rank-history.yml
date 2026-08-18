@@ -1,0 +1,54 @@
+name: GitHub Rank History
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths:
+      - "rank-history.json"
+      - "update_rank_history.py"
+      - ".github/workflows/rank-history.yml"
+
+concurrency:
+  group: github-rank-history
+  cancel-in-progress: false
+
+jobs:
+  track-rank:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Check rank
+        env:
+          GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN }}
+        run: python update_rank_history.py
+
+      - name: Commit rank change
+        run: |
+          git add rank-history.json
+          if git diff --staged --quiet; then
+            echo "No rank change to record."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: record GitHub rank change"
+          git pull --rebase origin main
+          git push origin HEAD:main
