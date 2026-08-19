@@ -36,13 +36,8 @@ jobs:
           plugin_languages_details: percentage
           plugin_languages_ignored: jupyter notebook
           plugin_languages_threshold: 0%
-          plugin_habits: yes
-          # Charts only. The facts list renders prose lines such as "Uses
-          # spaces for indentation" and "Mostly active on Tuesday", and this
-          # card is meant to stay figures and graphs.
-          plugin_habits_facts: no
-          plugin_habits_charts: yes
-          plugin_habits_trim: yes
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
           plugin_followup: yes
           plugin_followup_sections: repositories, user
 
