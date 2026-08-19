@@ -2,7 +2,7 @@ import os
 import math
 import random
 import requests
-from datetime import datetime
+from datetime import datetime, timedelta
 
 # GitHub API configuration
 TOKEN = os.environ['GITHUB_TOKEN']
@@ -37,6 +37,7 @@ PALETTES = {
 }
 
 CARDS = [('github-stats.svg', 'paper'), ('github-stats-night.svg', 'night')]
+HOURS_CARDS = [('github-hours.svg', 'paper'), ('github-hours-night.svg', 'night')]
 
 # Old-style serif for the display line, tabular mono for figures and labels.
 SERIF = "'Iowan Old Style','Palatino Linotype','Book Antiqua',Palatino,Georgia,serif"
@@ -50,10 +51,27 @@ STAR_COUNT = 55
 RING_RADIUS = 42
 RING_LENGTH = 2 * math.pi * RING_RADIUS
 
+# Korea does not observe daylight saving, so a fixed offset is enough to move
+# the UTC commit timestamps into the hours the author actually worked.
+TIMEZONE_OFFSET = timedelta(hours=9)
+TIMEZONE_LABEL = 'Asia/Seoul'
+
+# Commit history is walked one repository at a time. The cap bounds the API
+# cost against a repository with a very long history; at 100 commits per page
+# it still reaches much further back than this account has pushed.
+COMMIT_PAGE_LIMIT = 10
+
+WEEKDAYS = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN']
+
 # The README renders this card at its authored size inside a centred block,
 # so one unit lands as one pixel and the type below is sized for that.
 CARD_WIDTH = 495
 CARD_HEIGHT = 208
+
+# The hours card carries a 24 bar chart rather than a figure grid, so it is
+# shorter than the stats card while keeping the same width and margins.
+HOURS_CARD_WIDTH = 495
+HOURS_CARD_HEIGHT = 190
 
 # GraphQL query to fetch user statistics
 QUERY = '''
@@ -74,16 +92,59 @@ query($login: String!) {
 }
 '''
 
-def fetch_stats():
-    """Fetch user stats from GitHub GraphQL API."""
+# The repository list doubles as the source of the author node id, which the
+# history query needs to count only this user's commits in shared repositories.
+REPOS_QUERY = '''
+query($login: String!) {
+  user(login: $login) {
+    id
+    repositories(ownerAffiliations: OWNER, isFork: false, first: 100) {
+      nodes {
+        name
+        owner { login }
+      }
+    }
+  }
+}
+'''
+
+# Commit timestamps come from the default branch rather than from push events,
+# so one push of twenty commits counts twenty times and the sample is not
+# capped at the last few hundred events the way an activity feed would be.
+HISTORY_QUERY = '''
+query($owner: String!, $name: String!, $author: ID!, $after: String) {
+  repository(owner: $owner, name: $name) {
+    defaultBranchRef {
+      target {
+        ... on Commit {
+          history(author: {id: $author}, first: 100, after: $after) {
+            pageInfo { hasNextPage endCursor }
+            nodes { committedDate }
+          }
+        }
+      }
+    }
+  }
+}
+'''
+
+def _graphql(query, variables):
+    """Run one GraphQL query and return its data, raising on API errors."""
     resp = requests.post(
         'https://api.github.com/graphql',
         headers=HEADERS,
-        json={'query': QUERY, 'variables': {'login': USERNAME}},
+        json={'query': query, 'variables': variables},
         timeout=30,
     )
     resp.raise_for_status()
-    user = resp.json()['data']['user']
+    payload = resp.json()
+    if payload.get('errors'):
+        raise RuntimeError(payload['errors'][0].get('message', 'GraphQL error'))
+    return payload['data']
+
+def fetch_stats():
+    """Fetch user stats from GitHub GraphQL API."""
+    user = _graphql(QUERY, {'login': USERNAME})['user']
 
     return {
         'name': user['name'] or USERNAME,
@@ -94,6 +155,47 @@ def fetch_stats():
         'issues':   user['issues']['totalCount'],
         'followers': user['followers']['totalCount'],
     }
+
+def fetch_commit_hours():
+    """Bucket the author's commits by local hour and weekday.
+
+    Every owned repository is walked separately. A repository that was never
+    pushed to has no default branch to read, and a branch head that is not a
+    commit carries no history, so both are skipped rather than failing the run.
+    """
+    account = _graphql(REPOS_QUERY, {'login': USERNAME})['user']
+    authorId = account['id']
+
+    hours = [0] * 24
+    days = [0] * 7
+    total = 0
+
+    for repo in account['repositories']['nodes']:
+        cursor = None
+        for _ in range(COMMIT_PAGE_LIMIT):
+            branch = _graphql(HISTORY_QUERY, {
+                'owner': repo['owner']['login'],
+                'name': repo['name'],
+                'author': authorId,
+                'after': cursor,
+            })['repository']['defaultBranchRef']
+            if not branch:
+                break
+            history = branch['target'].get('history')
+            if not history:
+                break
+
+            for node in history['nodes']:
+                stamp = datetime.strptime(node['committedDate'], '%Y-%m-%dT%H:%M:%SZ') + TIMEZONE_OFFSET
+                hours[stamp.hour] += 1
+                days[stamp.weekday()] += 1
+                total += 1
+
+            if not history['pageInfo']['hasNextPage']:
+                break
+            cursor = history['pageInfo']['endCursor']
+
+    return {'hours': hours, 'days': days, 'total': total}
 
 def _normalcdf(mean, sigma, x):
     """Normal CDF via error function."""
@@ -270,7 +372,91 @@ def generate_svg(stats, theme, path):
 
     print(f'Generated {path} ({theme}) — Rank: {rank} (top {percentile:.1f}%)')
 
+def generate_hours_svg(activity, theme, path):
+    """Render one active-hours card in the given palette."""
+    palette = PALETTES[theme]
+    hours = activity['hours']
+    days = activity['days']
+
+    # An account with no readable history still renders a flat, honest card
+    # rather than dividing by zero.
+    ceiling = max(hours) or 1
+    peak = max(range(24), key=lambda hour: hours[hour])
+    busiest = max(range(7), key=lambda day: days[day])
+
+    chartLeft, chartRight = 28, 467
+    baseline, barCeiling = 128, 56
+    gap = 4
+    barWidth = (chartRight - chartLeft - gap * 23) / 24
+
+    bars = []
+    for hour, count in enumerate(hours):
+        # Every hour keeps a stub, so a quiet hour reads as a measured zero
+        # instead of as a gap in the chart.
+        height = max(barCeiling * count / ceiling, 1.5)
+        x = chartLeft + hour * (barWidth + gap)
+        fill = palette['spark'] if hour == peak else palette['accent']
+        bars.append(
+            f'  <rect x="{x:.1f}" y="{baseline - height:.1f}" width="{barWidth:.1f}" '
+            f'height="{height:.1f}" rx="1.5" fill="{fill}" '
+            f'fill-opacity="{0.35 + 0.65 * count / ceiling:.2f}"/>'
+        )
+    barMarkup = '\n'.join(bars)
+
+    ticks = []
+    for hour in range(0, 24, 3):
+        x = chartLeft + hour * (barWidth + gap) + barWidth / 2
+        ticks.append(
+            f'  <text x="{x:.1f}" y="143" text-anchor="middle" font-family="{MONO}" '
+            f'font-size="9.5" fill="{palette["muted"]}">{hour:02d}</text>'
+        )
+    tickMarkup = '\n'.join(ticks)
+
+    cells = [
+        ('PEAK HOUR', f'{peak:02d}:00'),
+        ('BUSIEST DAY', WEEKDAYS[busiest]),
+        ('COMMITS READ', f'{activity["total"]:,}'),
+    ]
+    cellMarkup = []
+    for index, (label, value) in enumerate(cells):
+        cellX = 28 + index * 152
+        cellMarkup.append(
+            f'  <text x="{cellX}" y="165" font-family="{MONO}" font-size="11" '
+            f'letter-spacing="0.9" fill="{palette["muted"]}">{label}</text>\n'
+            f'  <text x="{cellX}" y="182" font-family="{MONO}" font-size="17" '
+            f'font-weight="600" fill="{palette["text"]}">{value}</text>'
+        )
+    figureGrid = '\n'.join(cellMarkup)
+
+    # The stats card scatters a starfield over its empty ground, but bars read
+    # against their own baseline, so this card keeps a plain ground in both
+    # palettes and lets the chart carry the contrast.
+    svg = f'''<svg width="{HOURS_CARD_WIDTH}" height="{HOURS_CARD_HEIGHT}" viewBox="0 0 {HOURS_CARD_WIDTH} {HOURS_CARD_HEIGHT}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Commits by hour of day, peak at {peak:02d}:00 {TIMEZONE_LABEL}">
+  <rect x="0" y="0" width="{HOURS_CARD_WIDTH}" height="{HOURS_CARD_HEIGHT}" rx="6" fill="{palette["ground"]}"/>
+
+  <text x="28" y="38" font-family="{SERIF}" font-size="21" fill="{palette["accent"]}">Active hours</text>
+  <text x="467" y="38" text-anchor="end" font-family="{MONO}" font-size="12" fill="{palette["muted"]}">{TIMEZONE_LABEL}</text>
+  <line x1="28" y1="53" x2="467" y2="53" stroke="{palette["line"]}" stroke-opacity="{palette["lineAlpha"]}"/>
+
+{barMarkup}
+  <line x1="28" y1="{baseline + 0.5}" x2="467" y2="{baseline + 0.5}" stroke="{palette["line"]}" stroke-opacity="{palette["lineAlpha"]}"/>
+{tickMarkup}
+
+{figureGrid}
+
+  <rect x="0.5" y="0.5" width="{HOURS_CARD_WIDTH - 1}" height="{HOURS_CARD_HEIGHT - 1}" rx="6" fill="none" stroke="{palette["line"]}" stroke-opacity="{palette["edgeAlpha"]}"/>
+</svg>'''
+
+    with open(path, 'w', encoding='utf-8') as f:
+        f.write(svg)
+
+    print(f'Generated {path} ({theme}) — peak {peak:02d}:00, {activity["total"]} commits read')
+
 if __name__ == '__main__':
     stats = fetch_stats()
     for path, theme in CARDS:
         generate_svg(stats, theme, path)
+
+    activity = fetch_commit_hours()
+    for path, theme in HOURS_CARDS:
+        generate_hours_svg(activity, theme, path)
