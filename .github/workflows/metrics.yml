@@ -23,8 +23,14 @@ jobs:
           filename: github-metrics.svg
           base: header, activity, community, repositories, metadata
           config_timezone: Asia/Seoul
+          # The repositories query carries languages, releases and issue/pull
+          # request counts for every repository it returns. Asking for 100 at
+          # once made GitHub's GraphQL API time out on some runs, and metrics
+          # silently kept zero repositories when that happened, which rendered
+          # the card with "0 Languages" and "0 Stargazers".
+          repositories_batch: 10
           plugin_languages: yes
-          plugin_languages_limit: 20
+          plugin_languages_limit: 8
           plugin_languages_details: percentage
           plugin_languages_ignored: jupyter notebook
           plugin_languages_threshold: 0%
