@@ -89,6 +89,12 @@
   <img src="./github-stats-night.svg" alt="GitHub Stats"/>
 </div>
 
+<!-- Active hours -->
+
+<div align="center">
+  <img src="./github-hours-night.svg" alt="Commits by hour of day"/>
+</div>
+
 
 <div align="center">
   <img src="./github-metrics.svg" alt="pachir1su's Metrics"/>
