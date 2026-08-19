@@ -15,20 +15,22 @@ jobs:
     permissions:
       contents: write
     steps:
+      - uses: actions/checkout@v4
+
       - name: Generate metrics
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: pachir1su
           filename: github-metrics.svg
+          # The repositories query fails on roughly one run in seven, and
+          # metrics keeps zero repositories instead of raising, which renders
+          # the card with "0 Languages" and "0 Stargazers". Writing the render
+          # to the runner and committing it from the next step keeps such a
+          # run from reaching main.
+          output_action: none
           base: header, activity, community, repositories, metadata
           config_timezone: Asia/Seoul
-          # The repositories query carries languages, releases and issue/pull
-          # request counts for every repository it returns. Asking for 100 at
-          # once made GitHub's GraphQL API time out on some runs, and metrics
-          # silently kept zero repositories when that happened, which rendered
-          # the card with "0 Languages" and "0 Stargazers".
-          repositories_batch: 10
           plugin_languages: yes
           plugin_languages_limit: 8
           plugin_languages_details: percentage
@@ -44,4 +46,21 @@ jobs:
           plugin_followup: yes
           plugin_followup_sections: repositories, user
 
- 
+      - name: Commit render when repository data is complete
+        run: |
+          RENDER=/metrics_renders/github-metrics.svg
+
+          # "0 Languages" means the repositories query came back empty, which
+          # also zeroes releases, stargazers, watchers and the license
+          # preference. The digit class keeps "10 Languages" from matching.
+          if grep -qE '(^|[^0-9])0 Languages' "$RENDER"; then
+            echo "::warning::Repositories query returned nothing, keeping the previously committed card."
+            exit 0
+          fi
+
+          cp "$RENDER" github-metrics.svg
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add github-metrics.svg
+          git diff --staged --quiet || git commit -m "Update github-metrics.svg - [Skip GitHub Action]"
+          git push
