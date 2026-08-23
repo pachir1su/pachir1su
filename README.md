@@ -116,7 +116,7 @@
 <!-- Snake -->
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/pachir1su/pachir1su/output/snake.svg" alt="Contribution Snake"/>
+  <img src="https://raw.githubusercontent.com/pachir1su/pachir1su/output/snake.gif" alt="Contribution Snake"/>
 </div>
 
 <!-- Footer banner -->
