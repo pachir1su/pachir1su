@@ -12,19 +12,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # The README embeds the gif. Every cell of the svg render carries its own
-      # infinite CSS keyframe animation, so a browser re-rasterizes the whole
-      # image on every frame and the raster cache grows for as long as the tab
-      # stays open; a headless Chromium measurement of the svg alone took the
-      # renderer process from 79 MB to 961 MB in 150 seconds. The gif keeps the
-      # same animation as a decoded frame sequence instead.
-      # The svg render stays in the outputs so reverting the README alone does
-      # not leave a broken image on the profile.
+      # Only the svg render is used. The gif render was measured at 429 frames of
+      # 880x206, and a browser keeps every decoded frame, so it held about
+      # 300 MB for as long as the tab lived; the README collapses the svg
+      # instead, which costs nothing while the section stays closed.
       - uses: Platane/snk@v3
         with:
           github_user_name: pachir1su
           outputs: |
-            dist/snake.gif?palette=github-dark&color_snake=#f59e0b&color_dots=#f1eefb,#c4b5fd,#a78bfa,#7c3aed,#5b21b6
             dist/snake.svg?palette=github-dark&color_snake=#f59e0b&color_dots=#f1eefb,#c4b5fd,#a78bfa,#7c3aed,#5b21b6
 
       - name: Push to output branch
