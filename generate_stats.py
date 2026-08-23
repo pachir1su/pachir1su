@@ -38,6 +38,7 @@ PALETTES = {
 
 CARDS = [('github-stats.svg', 'paper'), ('github-stats-night.svg', 'night')]
 HOURS_CARDS = [('github-hours.svg', 'paper'), ('github-hours-night.svg', 'night')]
+ACTIVITY_CARDS = [('github-activity.svg', 'paper'), ('github-activity-night.svg', 'night')]
 
 # Old-style serif for the display line, tabular mono for figures and labels.
 SERIF = "'Iowan Old Style','Palatino Linotype','Book Antiqua',Palatino,Georgia,serif"
@@ -72,6 +73,11 @@ CARD_HEIGHT = 208
 # shorter than the stats card while keeping the same width and margins.
 HOURS_CARD_WIDTH = 495
 HOURS_CARD_HEIGHT = 190
+
+# The activity card carries a year of contributions rather than a single day,
+# so it is drawn at twice the stats card width and sits full bleed in README.
+ACTIVITY_CARD_WIDTH = 990
+ACTIVITY_CARD_HEIGHT = 260
 
 # GraphQL query to fetch user statistics
 QUERY = '''
@@ -121,6 +127,23 @@ query($owner: String!, $name: String!, $author: ID!, $after: String) {
             pageInfo { hasNextPage endCursor }
             nodes { committedDate }
           }
+        }
+      }
+    }
+  }
+}
+'''
+
+# The contribution calendar is the same series the profile heatmap draws, so
+# the card stays in step with the graph GitHub itself shows on the profile.
+CALENDAR_QUERY = '''
+query($login: String!) {
+  user(login: $login) {
+    contributionsCollection {
+      contributionCalendar {
+        totalContributions
+        weeks {
+          contributionDays { date contributionCount }
         }
       }
     }
@@ -196,6 +219,34 @@ def fetch_commit_hours():
             cursor = history['pageInfo']['endCursor']
 
     return {'hours': hours, 'days': days, 'total': total}
+
+def fetch_contributions():
+    """Read the last year of daily contributions, aggregated by week.
+
+    Daily counts are noisy at this card width, so the series is summed per
+    calendar week. A partial trailing week is kept as it stands rather than
+    scaled up, so the last point never overstates the current week.
+    """
+    calendar = (_graphql(CALENDAR_QUERY, {'login': USERNAME})
+                ['user']['contributionsCollection']['contributionCalendar'])
+
+    weeks = []
+    bestDay = 0
+    for week in calendar['weeks']:
+        days = week['contributionDays']
+        if not days:
+            continue
+        weeks.append({
+            'start': days[0]['date'],
+            'count': sum(day['contributionCount'] for day in days),
+        })
+        bestDay = max(bestDay, max(day['contributionCount'] for day in days))
+
+    return {
+        'weeks': weeks,
+        'total': calendar['totalContributions'],
+        'bestDay': bestDay,
+    }
 
 def _normalcdf(mean, sigma, x):
     """Normal CDF via error function."""
@@ -452,6 +503,95 @@ def generate_hours_svg(activity, theme, path):
 
     print(f'Generated {path} ({theme}) — peak {peak:02d}:00, {activity["total"]} commits read')
 
+def generate_activity_svg(contributions, theme, path):
+    """Render one contribution activity card in the given palette."""
+    palette = PALETTES[theme]
+    weeks = contributions['weeks']
+
+    chartLeft, chartRight = 40, ACTIVITY_CARD_WIDTH - 40
+    baseline, chartTop = 200, 78
+
+    # A single week carries no slope, and an empty calendar carries no data at
+    # all, so both fall back to a flat baseline instead of dividing by zero.
+    ceiling = max((week['count'] for week in weeks), default=0) or 1
+    span = max(len(weeks) - 1, 1)
+
+    points = []
+    for index, week in enumerate(weeks):
+        x = chartLeft + (chartRight - chartLeft) * index / span
+        y = baseline - (baseline - chartTop) * week['count'] / ceiling
+        points.append((x, y))
+    if not points:
+        points = [(chartLeft, baseline), (chartRight, baseline)]
+
+    line = ' '.join(f'{x:.1f},{y:.1f}' for x, y in points)
+    area = (f'{points[0][0]:.1f},{baseline} ' + line +
+            f' {points[-1][0]:.1f},{baseline}')
+
+    # Only the ends and the middle are labelled; a tick under every week would
+    # crowd the axis at this width.
+    tickMarkup = ''
+    if weeks:
+        marks = {0: weeks[0]['start'], len(weeks) - 1: weeks[-1]['start']}
+        marks[len(weeks) // 2] = weeks[len(weeks) // 2]['start']
+        ticks = []
+        for index in sorted(marks):
+            x = points[index][0]
+            anchor = 'start' if index == 0 else 'end' if index == len(weeks) - 1 else 'middle'
+            label = datetime.strptime(marks[index], '%Y-%m-%d').strftime('%b %Y')
+            ticks.append(
+                f'  <text x="{x:.1f}" y="218" text-anchor="{anchor}" font-family="{MONO}" '
+                f'font-size="10.5" fill="{palette["muted"]}">{label.upper()}</text>'
+            )
+        tickMarkup = '\n'.join(ticks)
+
+    peak = max(range(len(points)), key=lambda index: weeks[index]['count']) if weeks else 0
+    cells = [
+        ('CONTRIBUTIONS &#183; 1Y', f'{contributions["total"]:,}'),
+        ('BEST WEEK', f'{weeks[peak]["count"]:,}' if weeks else '0'),
+        ('BEST DAY', f'{contributions["bestDay"]:,}'),
+    ]
+    cellMarkup = []
+    for index, (label, value) in enumerate(cells):
+        cellX = 40 + index * 172
+        cellMarkup.append(
+            f'  <text x="{cellX}" y="234" font-family="{MONO}" font-size="11" '
+            f'letter-spacing="0.9" fill="{palette["muted"]}">{label}</text>\n'
+            f'  <text x="{cellX + 168}" y="234" text-anchor="end" font-family="{MONO}" '
+            f'font-size="15" font-weight="600" fill="{palette["text"]}">{value}</text>'
+        )
+    figureGrid = '\n'.join(cellMarkup)
+
+    svg = f'''<svg width="{ACTIVITY_CARD_WIDTH}" height="{ACTIVITY_CARD_HEIGHT}" viewBox="0 0 {ACTIVITY_CARD_WIDTH} {ACTIVITY_CARD_HEIGHT}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Weekly contributions over the last year, {contributions["total"]} in total">
+  <defs>
+    <linearGradient id="ga-area" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="{palette["glow"]}" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="{palette["glow"]}" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="{ACTIVITY_CARD_WIDTH}" height="{ACTIVITY_CARD_HEIGHT}" rx="6" fill="{palette["ground"]}"/>
+
+  <text x="40" y="44" font-family="{SERIF}" font-size="21" fill="{palette["accent"]}">Contribution activity</text>
+  <text x="{ACTIVITY_CARD_WIDTH - 40}" y="44" text-anchor="end" font-family="{MONO}" font-size="12" fill="{palette["muted"]}">per week &#183; last 12 months</text>
+  <line x1="40" y1="59" x2="{ACTIVITY_CARD_WIDTH - 40}" y2="59" stroke="{palette["line"]}" stroke-opacity="{palette["lineAlpha"]}"/>
+
+  <polygon points="{area}" fill="url(#ga-area)"/>
+  <polyline points="{line}" fill="none" stroke="{palette["accent"]}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="{points[peak][0]:.1f}" cy="{points[peak][1]:.1f}" r="3.4" fill="{palette["spark"]}"/>
+  <line x1="40" y1="{baseline + 0.5}" x2="{ACTIVITY_CARD_WIDTH - 40}" y2="{baseline + 0.5}" stroke="{palette["line"]}" stroke-opacity="{palette["lineAlpha"]}"/>
+{tickMarkup}
+
+{figureGrid}
+
+  <rect x="0.5" y="0.5" width="{ACTIVITY_CARD_WIDTH - 1}" height="{ACTIVITY_CARD_HEIGHT - 1}" rx="6" fill="none" stroke="{palette["line"]}" stroke-opacity="{palette["edgeAlpha"]}"/>
+</svg>'''
+
+    with open(path, 'w', encoding='utf-8') as f:
+        f.write(svg)
+
+    print(f'Generated {path} ({theme}) — {contributions["total"]} contributions over {len(weeks)} weeks')
+
 if __name__ == '__main__':
     stats = fetch_stats()
     for path, theme in CARDS:
@@ -460,3 +600,7 @@ if __name__ == '__main__':
     activity = fetch_commit_hours()
     for path, theme in HOURS_CARDS:
         generate_hours_svg(activity, theme, path)
+
+    contributions = fetch_contributions()
+    for path, theme in ACTIVITY_CARDS:
+        generate_activity_svg(contributions, theme, path)

@@ -110,7 +110,7 @@
 <!-- Activity Graph -->
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=pachir1su&bg_color=0b0a1f&color=e9e6ff&title_color=a78bfa&line=a78bfa&point=fde68a&area=true&area_color=7c3aed&hide_border=true" width="98%" alt="Activity Graph"/>
+  <img src="./github-activity-night.svg" alt="Contribution activity"/>
 </div>
 
 <!-- Snake -->
