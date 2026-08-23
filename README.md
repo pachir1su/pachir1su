@@ -114,9 +114,15 @@
 </div>
 
 <!-- Snake -->
+<!-- 셀마다 무한 CSS 애니메이션이 걸린 렌더라 화면에 보이는 동안 브라우저
+     래스터 캐시가 계속 늘어난다. 접어 두면 그리지 않으므로 기본은 닫아 둔다. -->
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/pachir1su/pachir1su/output/snake.gif" alt="Contribution Snake"/>
+  <details>
+    <summary><b>Contribution Snake</b></summary>
+    <br/>
+    <img src="https://raw.githubusercontent.com/pachir1su/pachir1su/output/snake.svg" alt="Contribution Snake"/>
+  </details>
 </div>
 
 <!-- Footer banner -->
