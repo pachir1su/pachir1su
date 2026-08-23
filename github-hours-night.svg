@@ -5,30 +5,30 @@
   <text x="467" y="38" text-anchor="end" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="12" fill="#9c93c9">Asia/Seoul</text>
   <line x1="28" y1="53" x2="467" y2="53" stroke="#a78bfa" stroke-opacity="0.22"/>
 
-  <rect x="28.0" y="85.8" width="14.5" height="42.2" rx="1.5" fill="#a78bfa" fill-opacity="0.84"/>
-  <rect x="46.5" y="99.9" width="14.5" height="28.1" rx="1.5" fill="#a78bfa" fill-opacity="0.68"/>
+  <rect x="28.0" y="86.0" width="14.5" height="42.0" rx="1.5" fill="#a78bfa" fill-opacity="0.84"/>
+  <rect x="46.5" y="100.0" width="14.5" height="28.0" rx="1.5" fill="#a78bfa" fill-opacity="0.68"/>
   <rect x="64.9" y="72.0" width="14.5" height="56.0" rx="1.5" fill="#fde68a" fill-opacity="1.00"/>
   <rect x="83.4" y="112.5" width="14.5" height="15.5" rx="1.5" fill="#a78bfa" fill-opacity="0.53"/>
-  <rect x="101.8" y="90.5" width="14.5" height="37.5" rx="1.5" fill="#a78bfa" fill-opacity="0.78"/>
-  <rect x="120.3" y="98.8" width="14.5" height="29.2" rx="1.5" fill="#a78bfa" fill-opacity="0.69"/>
+  <rect x="101.8" y="90.7" width="14.5" height="37.3" rx="1.5" fill="#a78bfa" fill-opacity="0.78"/>
+  <rect x="120.3" y="98.9" width="14.5" height="29.1" rx="1.5" fill="#a78bfa" fill-opacity="0.69"/>
   <rect x="138.8" y="119.3" width="14.5" height="8.7" rx="1.5" fill="#a78bfa" fill-opacity="0.45"/>
-  <rect x="157.2" y="110.5" width="14.5" height="17.5" rx="1.5" fill="#a78bfa" fill-opacity="0.55"/>
+  <rect x="157.2" y="110.6" width="14.5" height="17.4" rx="1.5" fill="#a78bfa" fill-opacity="0.55"/>
   <rect x="175.7" y="110.8" width="14.5" height="17.2" rx="1.5" fill="#a78bfa" fill-opacity="0.55"/>
-  <rect x="194.1" y="96.5" width="14.5" height="31.5" rx="1.5" fill="#a78bfa" fill-opacity="0.72"/>
-  <rect x="212.6" y="102.0" width="14.5" height="26.0" rx="1.5" fill="#a78bfa" fill-opacity="0.65"/>
-  <rect x="231.0" y="98.6" width="14.5" height="29.4" rx="1.5" fill="#a78bfa" fill-opacity="0.69"/>
-  <rect x="249.5" y="109.0" width="14.5" height="19.0" rx="1.5" fill="#a78bfa" fill-opacity="0.57"/>
-  <rect x="268.0" y="103.1" width="14.5" height="24.9" rx="1.5" fill="#a78bfa" fill-opacity="0.64"/>
-  <rect x="286.4" y="108.4" width="14.5" height="19.6" rx="1.5" fill="#a78bfa" fill-opacity="0.58"/>
-  <rect x="304.9" y="92.9" width="14.5" height="35.1" rx="1.5" fill="#a78bfa" fill-opacity="0.76"/>
-  <rect x="323.3" y="105.6" width="14.5" height="22.4" rx="1.5" fill="#a78bfa" fill-opacity="0.61"/>
-  <rect x="341.8" y="104.4" width="14.5" height="23.6" rx="1.5" fill="#a78bfa" fill-opacity="0.62"/>
-  <rect x="360.3" y="107.3" width="14.5" height="20.7" rx="1.5" fill="#a78bfa" fill-opacity="0.59"/>
-  <rect x="378.7" y="111.2" width="14.5" height="16.8" rx="1.5" fill="#a78bfa" fill-opacity="0.55"/>
-  <rect x="397.2" y="101.6" width="14.5" height="26.4" rx="1.5" fill="#a78bfa" fill-opacity="0.66"/>
-  <rect x="415.6" y="102.2" width="14.5" height="25.8" rx="1.5" fill="#a78bfa" fill-opacity="0.65"/>
-  <rect x="434.1" y="100.1" width="14.5" height="27.9" rx="1.5" fill="#a78bfa" fill-opacity="0.67"/>
-  <rect x="452.5" y="89.9" width="14.5" height="38.1" rx="1.5" fill="#a78bfa" fill-opacity="0.79"/>
+  <rect x="194.1" y="96.6" width="14.5" height="31.4" rx="1.5" fill="#a78bfa" fill-opacity="0.71"/>
+  <rect x="212.6" y="102.1" width="14.5" height="25.9" rx="1.5" fill="#a78bfa" fill-opacity="0.65"/>
+  <rect x="231.0" y="98.7" width="14.5" height="29.3" rx="1.5" fill="#a78bfa" fill-opacity="0.69"/>
+  <rect x="249.5" y="109.1" width="14.5" height="18.9" rx="1.5" fill="#a78bfa" fill-opacity="0.57"/>
+  <rect x="268.0" y="103.2" width="14.5" height="24.8" rx="1.5" fill="#a78bfa" fill-opacity="0.64"/>
+  <rect x="286.4" y="108.5" width="14.5" height="19.5" rx="1.5" fill="#a78bfa" fill-opacity="0.58"/>
+  <rect x="304.9" y="93.0" width="14.5" height="35.0" rx="1.5" fill="#a78bfa" fill-opacity="0.76"/>
+  <rect x="323.3" y="105.7" width="14.5" height="22.3" rx="1.5" fill="#a78bfa" fill-opacity="0.61"/>
+  <rect x="341.8" y="104.5" width="14.5" height="23.5" rx="1.5" fill="#a78bfa" fill-opacity="0.62"/>
+  <rect x="360.3" y="107.4" width="14.5" height="20.6" rx="1.5" fill="#a78bfa" fill-opacity="0.59"/>
+  <rect x="378.7" y="111.2" width="14.5" height="16.8" rx="1.5" fill="#a78bfa" fill-opacity="0.54"/>
+  <rect x="397.2" y="101.7" width="14.5" height="26.3" rx="1.5" fill="#a78bfa" fill-opacity="0.66"/>
+  <rect x="415.6" y="102.3" width="14.5" height="25.7" rx="1.5" fill="#a78bfa" fill-opacity="0.65"/>
+  <rect x="434.1" y="100.2" width="14.5" height="27.8" rx="1.5" fill="#a78bfa" fill-opacity="0.67"/>
+  <rect x="452.5" y="90.0" width="14.5" height="38.0" rx="1.5" fill="#a78bfa" fill-opacity="0.79"/>
   <line x1="28" y1="128.5" x2="467" y2="128.5" stroke="#a78bfa" stroke-opacity="0.22"/>
   <text x="35.2" y="143" text-anchor="middle" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="9.5" fill="#9c93c9">00</text>
   <text x="90.6" y="143" text-anchor="middle" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="9.5" fill="#9c93c9">03</text>
@@ -44,7 +44,7 @@
   <text x="180" y="165" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="11" letter-spacing="0.9" fill="#9c93c9">BUSIEST DAY</text>
   <text x="180" y="182" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="17" font-weight="600" fill="#e9e6ff">MON</text>
   <text x="332" y="165" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="11" letter-spacing="0.9" fill="#9c93c9">COMMITS READ</text>
-  <text x="332" y="182" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="17" font-weight="600" fill="#e9e6ff">3,001</text>
+  <text x="332" y="182" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="17" font-weight="600" fill="#e9e6ff">3,002</text>
 
   <rect x="0.5" y="0.5" width="494" height="189" rx="6" fill="none" stroke="#a78bfa" stroke-opacity="0.28"/>
 </svg>
