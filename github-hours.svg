@@ -6,29 +6,29 @@
   <line x1="28" y1="53" x2="467" y2="53" stroke="#1f1c14" stroke-opacity="0.12"/>
 
   <rect x="28.0" y="72.0" width="14.5" height="56.0" rx="1.5" fill="#c63b3b" fill-opacity="1.00"/>
-  <rect x="46.5" y="103.3" width="14.5" height="24.7" rx="1.5" fill="#c63b3b" fill-opacity="0.64"/>
-  <rect x="64.9" y="72.4" width="14.5" height="55.6" rx="1.5" fill="#c63b3b" fill-opacity="1.00"/>
-  <rect x="83.4" y="109.8" width="14.5" height="18.2" rx="1.5" fill="#c63b3b" fill-opacity="0.56"/>
-  <rect x="101.8" y="93.4" width="14.5" height="34.6" rx="1.5" fill="#c63b3b" fill-opacity="0.75"/>
-  <rect x="120.3" y="102.3" width="14.5" height="25.7" rx="1.5" fill="#c63b3b" fill-opacity="0.65"/>
-  <rect x="138.8" y="120.4" width="14.5" height="7.6" rx="1.5" fill="#c63b3b" fill-opacity="0.44"/>
-  <rect x="157.2" y="112.7" width="14.5" height="15.3" rx="1.5" fill="#c63b3b" fill-opacity="0.53"/>
-  <rect x="175.7" y="112.9" width="14.5" height="15.1" rx="1.5" fill="#c63b3b" fill-opacity="0.52"/>
-  <rect x="194.1" y="100.5" width="14.5" height="27.5" rx="1.5" fill="#c63b3b" fill-opacity="0.67"/>
-  <rect x="212.6" y="105.3" width="14.5" height="22.7" rx="1.5" fill="#c63b3b" fill-opacity="0.61"/>
-  <rect x="231.0" y="97.1" width="14.5" height="30.9" rx="1.5" fill="#c63b3b" fill-opacity="0.71"/>
-  <rect x="249.5" y="111.4" width="14.5" height="16.6" rx="1.5" fill="#c63b3b" fill-opacity="0.54"/>
-  <rect x="268.0" y="106.2" width="14.5" height="21.8" rx="1.5" fill="#c63b3b" fill-opacity="0.60"/>
-  <rect x="286.4" y="110.7" width="14.5" height="17.3" rx="1.5" fill="#c63b3b" fill-opacity="0.55"/>
-  <rect x="304.9" y="96.9" width="14.5" height="31.1" rx="1.5" fill="#c63b3b" fill-opacity="0.71"/>
-  <rect x="323.3" y="108.5" width="14.5" height="19.5" rx="1.5" fill="#c63b3b" fill-opacity="0.58"/>
-  <rect x="341.8" y="107.3" width="14.5" height="20.7" rx="1.5" fill="#c63b3b" fill-opacity="0.59"/>
-  <rect x="360.3" y="110.0" width="14.5" height="18.0" rx="1.5" fill="#c63b3b" fill-opacity="0.56"/>
-  <rect x="378.7" y="113.3" width="14.5" height="14.7" rx="1.5" fill="#c63b3b" fill-opacity="0.52"/>
-  <rect x="397.2" y="95.6" width="14.5" height="32.4" rx="1.5" fill="#c63b3b" fill-opacity="0.73"/>
-  <rect x="415.6" y="104.4" width="14.5" height="23.6" rx="1.5" fill="#c63b3b" fill-opacity="0.62"/>
-  <rect x="434.1" y="103.4" width="14.5" height="24.6" rx="1.5" fill="#c63b3b" fill-opacity="0.64"/>
-  <rect x="452.5" y="94.7" width="14.5" height="33.3" rx="1.5" fill="#c63b3b" fill-opacity="0.74"/>
+  <rect x="46.5" y="101.9" width="14.5" height="26.1" rx="1.5" fill="#c63b3b" fill-opacity="0.65"/>
+  <rect x="64.9" y="75.2" width="14.5" height="52.8" rx="1.5" fill="#c63b3b" fill-opacity="0.96"/>
+  <rect x="83.4" y="109.1" width="14.5" height="18.9" rx="1.5" fill="#c63b3b" fill-opacity="0.57"/>
+  <rect x="101.8" y="95.0" width="14.5" height="33.0" rx="1.5" fill="#c63b3b" fill-opacity="0.73"/>
+  <rect x="120.3" y="103.6" width="14.5" height="24.4" rx="1.5" fill="#c63b3b" fill-opacity="0.63"/>
+  <rect x="138.8" y="120.8" width="14.5" height="7.2" rx="1.5" fill="#c63b3b" fill-opacity="0.43"/>
+  <rect x="157.2" y="113.5" width="14.5" height="14.5" rx="1.5" fill="#c63b3b" fill-opacity="0.52"/>
+  <rect x="175.7" y="113.7" width="14.5" height="14.3" rx="1.5" fill="#c63b3b" fill-opacity="0.52"/>
+  <rect x="194.1" y="101.9" width="14.5" height="26.1" rx="1.5" fill="#c63b3b" fill-opacity="0.65"/>
+  <rect x="212.6" y="106.4" width="14.5" height="21.6" rx="1.5" fill="#c63b3b" fill-opacity="0.60"/>
+  <rect x="231.0" y="98.7" width="14.5" height="29.3" rx="1.5" fill="#c63b3b" fill-opacity="0.69"/>
+  <rect x="249.5" y="111.7" width="14.5" height="16.3" rx="1.5" fill="#c63b3b" fill-opacity="0.54"/>
+  <rect x="268.0" y="107.0" width="14.5" height="21.0" rx="1.5" fill="#c63b3b" fill-opacity="0.59"/>
+  <rect x="286.4" y="111.6" width="14.5" height="16.4" rx="1.5" fill="#c63b3b" fill-opacity="0.54"/>
+  <rect x="304.9" y="98.5" width="14.5" height="29.5" rx="1.5" fill="#c63b3b" fill-opacity="0.69"/>
+  <rect x="323.3" y="109.5" width="14.5" height="18.5" rx="1.5" fill="#c63b3b" fill-opacity="0.57"/>
+  <rect x="341.8" y="108.4" width="14.5" height="19.6" rx="1.5" fill="#c63b3b" fill-opacity="0.58"/>
+  <rect x="360.3" y="110.9" width="14.5" height="17.1" rx="1.5" fill="#c63b3b" fill-opacity="0.55"/>
+  <rect x="378.7" y="114.0" width="14.5" height="14.0" rx="1.5" fill="#c63b3b" fill-opacity="0.51"/>
+  <rect x="397.2" y="97.3" width="14.5" height="30.7" rx="1.5" fill="#c63b3b" fill-opacity="0.71"/>
+  <rect x="415.6" y="104.3" width="14.5" height="23.7" rx="1.5" fill="#c63b3b" fill-opacity="0.62"/>
+  <rect x="434.1" y="104.3" width="14.5" height="23.7" rx="1.5" fill="#c63b3b" fill-opacity="0.62"/>
+  <rect x="452.5" y="96.4" width="14.5" height="31.6" rx="1.5" fill="#c63b3b" fill-opacity="0.72"/>
   <line x1="28" y1="128.5" x2="467" y2="128.5" stroke="#1f1c14" stroke-opacity="0.12"/>
   <text x="35.2" y="143" text-anchor="middle" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="9.5" fill="#5a5040">00</text>
   <text x="90.6" y="143" text-anchor="middle" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="9.5" fill="#5a5040">03</text>
@@ -44,7 +44,7 @@
   <text x="180" y="165" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="11" letter-spacing="0.9" fill="#5a5040">BUSIEST DAY</text>
   <text x="180" y="182" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="17" font-weight="600" fill="#1f1c14">MON</text>
   <text x="332" y="165" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="11" letter-spacing="0.9" fill="#5a5040">COMMITS READ</text>
-  <text x="332" y="182" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="17" font-weight="600" fill="#1f1c14">3,265</text>
+  <text x="332" y="182" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="17" font-weight="600" fill="#1f1c14">3,320</text>
 
   <rect x="0.5" y="0.5" width="494" height="189" rx="6" fill="none" stroke="#1f1c14" stroke-opacity="0.16"/>
 </svg>
