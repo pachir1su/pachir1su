@@ -6,7 +6,7 @@
   <line x1="28" y1="53" x2="467" y2="53" stroke="#a78bfa" stroke-opacity="0.22"/>
 
   <rect x="28.0" y="72.0" width="14.5" height="56.0" rx="1.5" fill="#fde68a" fill-opacity="1.00"/>
-  <rect x="46.5" y="103.9" width="14.5" height="24.1" rx="1.5" fill="#a78bfa" fill-opacity="0.63"/>
+  <rect x="46.5" y="77.0" width="14.5" height="51.0" rx="1.5" fill="#a78bfa" fill-opacity="0.94"/>
   <rect x="64.9" y="79.9" width="14.5" height="48.1" rx="1.5" fill="#a78bfa" fill-opacity="0.91"/>
   <rect x="83.4" y="91.4" width="14.5" height="36.6" rx="1.5" fill="#a78bfa" fill-opacity="0.77"/>
   <rect x="101.8" y="98.0" width="14.5" height="30.0" rx="1.5" fill="#a78bfa" fill-opacity="0.70"/>
@@ -44,7 +44,7 @@
   <text x="180" y="165" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="11" letter-spacing="0.9" fill="#9c93c9">BUSIEST DAY</text>
   <text x="180" y="182" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="17" font-weight="600" fill="#e9e6ff">MON</text>
   <text x="332" y="165" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="11" letter-spacing="0.9" fill="#9c93c9">COMMITS READ</text>
-  <text x="332" y="182" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="17" font-weight="600" fill="#e9e6ff">3,550</text>
+  <text x="332" y="182" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="17" font-weight="600" fill="#e9e6ff">3,718</text>
 
   <rect x="0.5" y="0.5" width="494" height="189" rx="6" fill="none" stroke="#a78bfa" stroke-opacity="0.28"/>
 </svg>
