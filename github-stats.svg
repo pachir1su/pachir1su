@@ -6,25 +6,25 @@
   <line x1="28" y1="53" x2="467" y2="53" stroke="#1f1c14" stroke-opacity="0.12"/>
 
   <text x="28" y="78" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="12.5" letter-spacing="0.9" fill="#5a5040">STARS EARNED</text>
-  <text x="28" y="100" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="23" font-weight="600" fill="#1f1c14">44</text>
+  <text x="28" y="100" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="23" font-weight="600" fill="#1f1c14">48</text>
   <text x="190" y="78" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="12.5" letter-spacing="0.9" fill="#5a5040">COMMITS &#183; 2026</text>
-  <text x="190" y="100" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="23" font-weight="600" fill="#1f1c14">6099</text>
+  <text x="190" y="100" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="23" font-weight="600" fill="#1f1c14">6330</text>
   <text x="28" y="124" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="12.5" letter-spacing="0.9" fill="#5a5040">PULL REQUESTS</text>
-  <text x="28" y="146" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="23" font-weight="600" fill="#1f1c14">1257</text>
+  <text x="28" y="146" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="23" font-weight="600" fill="#1f1c14">1289</text>
   <text x="190" y="124" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="12.5" letter-spacing="0.9" fill="#5a5040">ISSUES OPENED</text>
-  <text x="190" y="146" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="23" font-weight="600" fill="#1f1c14">648</text>
+  <text x="190" y="146" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="23" font-weight="600" fill="#1f1c14">650</text>
   <text x="28" y="170" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="12.5" letter-spacing="0.9" fill="#5a5040">CODE REVIEWS</text>
-  <text x="28" y="192" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="23" font-weight="600" fill="#1f1c14">860</text>
+  <text x="28" y="192" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="23" font-weight="600" fill="#1f1c14">861</text>
   <text x="190" y="170" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="12.5" letter-spacing="0.9" fill="#5a5040">FOLLOWERS</text>
   <text x="190" y="192" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="23" font-weight="600" fill="#1f1c14">113</text>
 
   <g transform="translate(410,130)">
     <circle r="42" fill="none" stroke="#1f1c14" stroke-opacity="0.12" stroke-width="5"/>
     <circle r="42" fill="none" stroke="#c63b3b" stroke-width="5"
-      stroke-dasharray="215.7 263.9" stroke-linecap="round" transform="rotate(-90)"/>
-    <circle cx="-38.3" cy="-17.3" r="3.4" fill="#c63b3b"/>
+      stroke-dasharray="218.5 263.9" stroke-linecap="round" transform="rotate(-90)"/>
+    <circle cx="-37.1" cy="-19.8" r="3.4" fill="#c63b3b"/>
     <text y="-2" text-anchor="middle" font-family="'Iowan Old Style','Palatino Linotype','Book Antiqua',Palatino,Georgia,serif" font-size="28" fill="#c63b3b">A</text>
-    <text y="20" text-anchor="middle" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="11.5" letter-spacing="0.9" fill="#5a5040">TOP 18%</text>
+    <text y="20" text-anchor="middle" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="11.5" letter-spacing="0.9" fill="#5a5040">TOP 17%</text>
   </g>
 
   <rect x="0.5" y="0.5" width="494" height="207" rx="6" fill="none" stroke="#1f1c14" stroke-opacity="0.16"/>
