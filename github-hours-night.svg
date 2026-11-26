@@ -21,7 +21,7 @@
   <rect x="268.0" y="117.1" width="14.5" height="10.9" rx="1.5" fill="#a78bfa" fill-opacity="0.48"/>
   <rect x="286.4" y="116.6" width="14.5" height="11.4" rx="1.5" fill="#a78bfa" fill-opacity="0.48"/>
   <rect x="304.9" y="110.0" width="14.5" height="18.0" rx="1.5" fill="#a78bfa" fill-opacity="0.56"/>
-  <rect x="323.3" y="118.0" width="14.5" height="10.0" rx="1.5" fill="#a78bfa" fill-opacity="0.47"/>
+  <rect x="323.3" y="117.9" width="14.5" height="10.1" rx="1.5" fill="#a78bfa" fill-opacity="0.47"/>
   <rect x="341.8" y="115.6" width="14.5" height="12.4" rx="1.5" fill="#a78bfa" fill-opacity="0.49"/>
   <rect x="360.3" y="117.4" width="14.5" height="10.6" rx="1.5" fill="#a78bfa" fill-opacity="0.47"/>
   <rect x="378.7" y="117.1" width="14.5" height="10.9" rx="1.5" fill="#a78bfa" fill-opacity="0.48"/>
@@ -44,7 +44,7 @@
   <text x="180" y="165" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="11" letter-spacing="0.9" fill="#9c93c9">BUSIEST DAY</text>
   <text x="180" y="182" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="17" font-weight="600" fill="#e9e6ff">TUE</text>
   <text x="332" y="165" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="11" letter-spacing="0.9" fill="#9c93c9">COMMITS READ</text>
-  <text x="332" y="182" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="17" font-weight="600" fill="#e9e6ff">4,860</text>
+  <text x="332" y="182" font-family="'SF Mono','SFMono-Regular','Cascadia Mono','Segoe UI Mono','Roboto Mono','DejaVu Sans Mono',monospace" font-size="17" font-weight="600" fill="#e9e6ff">4,861</text>
 
   <rect x="0.5" y="0.5" width="494" height="189" rx="6" fill="none" stroke="#a78bfa" stroke-opacity="0.28"/>
 </svg>
